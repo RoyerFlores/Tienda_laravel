@@ -1,0 +1,181 @@
+/* Contenedor principal de requisitos */
+.password-requirements {
+    background-color: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 0.375rem !important;
+    padding: 1rem !important;
+    margin-top: 0.5rem !important;
+    font-family: inherit !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Cada requisito individual */
+.password-requirements .requirement {
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.875rem !important;
+    transition: color 0.3s ease !important;
+}
+
+.password-requirements .requirement:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Icono circular de cada requisito */
+.password-requirements .requirement-icon {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 0.5rem !important;
+    font-size: 0.75rem !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+    flex-shrink: 0 !important;
+}
+
+/* Estados válido e inválido */
+.password-requirements .requirement.valid .requirement-icon {
+    background-color: #198754 !important;
+    color: white !important;
+}
+
+.password-requirements .requirement.invalid .requirement-icon {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+.password-requirements .requirement.valid .requirement-text {
+    color: #198754 !important;
+    text-decoration: line-through !important;
+    opacity: 0.8 !important;
+}
+
+.password-requirements .requirement.invalid .requirement-text {
+    color: #dc3545 !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+}
+
+/* Contenedor de la barra de fortaleza */
+.password-strength {
+    height: 6px !important;
+    background-color: #e9ecef !important;
+    border-radius: 3px !important;
+    margin-top: 0.5rem !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Barra de progreso de fortaleza */
+.password-strength .strength-bar {
+    height: 100% !important;
+    width: 0% !important;
+    transition: width 0.4s ease, background-color 0.4s ease !important;
+    border-radius: 3px !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* Colores de fortaleza */
+.password-strength .strength-bar.strength-weak {
+    background-color: #dc3545 !important;
+}
+
+.password-strength .strength-bar.strength-fair {
+    background-color: #fd7e14 !important;
+}
+
+.password-strength .strength-bar.strength-good {
+    background-color: #ffc107 !important;
+}
+
+.password-strength .strength-bar.strength-strong {
+    background-color: #198754 !important;
+}
+
+/* Mensaje de coincidencia de contraseñas */
+#passwordMatchMsg {
+    margin-top: 0.5rem !important;
+    font-size: 0.875rem !important;
+}
+
+#passwordMatchMsg .text-success {
+    color: #198754 !important;
+}
+
+#passwordMatchMsg .text-danger {
+    color: #dc3545 !important;
+}
+
+/* Estilos para campos válidos e inválidos */
+.form-control.is-valid {
+    border-color: #198754 !important;
+    padding-right: calc(1.5em + 0.75rem) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='m2.3 6.73.94-.94 1.44-1.44L7.08 1.77l.66.66-3.66 3.66-1.44 1.44-.66.66-.66-.66z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right calc(0.375em + 0.1875rem) center !important;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545 !important;
+    padding-right: calc(1.5em + 0.75rem) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6 1.4 1.4M7.2 4.6l-1.4 1.4'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right calc(0.375em + 0.1875rem) center !important;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.password-requirements {
+    animation: fadeIn 0.3s ease !important;
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+    .password-requirements {
+        padding: 0.75rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .password-requirements .requirement {
+        font-size: 0.8rem !important;
+    }
+    
+    .password-requirements .requirement-icon {
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* Estilos adicionales para mejor contraste */
+.password-requirements.dark-theme {
+    background-color: #343a40 !important;
+    border-color: #495057 !important;
+    color: #ffffff !important;
+}
+
+.password-requirements.dark-theme .requirement.invalid .requirement-text {
+    color: #f5c2c7 !important;
+}
+
+.password-requirements.dark-theme .requirement.valid .requirement-text {
+    color: #badbcc !important;
+}
